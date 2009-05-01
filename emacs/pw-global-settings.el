@@ -6,6 +6,7 @@
 
 (setq make-backup-files nil)
 (setq inhibit-startup-screen t)
+(setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 (setq show-paren-delay 0.2)
 (setq show-paren-style 'parenthesis)
