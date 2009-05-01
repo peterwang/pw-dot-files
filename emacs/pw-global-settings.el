@@ -13,7 +13,8 @@
 (setq transient-mark-mode t)
 (setq ansi-color-for-comint-mode t)
 (setq display-time-day-and-date t)
-(setq visible-bell t)
+(setq visible-bell nil)
+(setq ring-bell-function (lambda () nil))
 
 (display-time-mode 1)
 (mouse-avoidance-mode 'jump)
