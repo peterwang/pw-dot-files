@@ -12,7 +12,10 @@
 (setq frame-title-format "%b - %f")
 (setq transient-mark-mode t)
 (setq ansi-color-for-comint-mode t)
+(setq display-time-day-and-date t)
+(setq visible-bell t)
 
+(display-time-mode 1)
 (mouse-avoidance-mode 'jump)
 (ido-mode 'both)
 (tool-bar-mode -1)

@@ -26,3 +26,4 @@
 (require 'pw-global-settings)
 (require 'pw-fonts-settings)
 (require 'pw-c-style)
+(require 'pw-faces-settings)
