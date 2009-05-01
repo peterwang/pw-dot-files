@@ -1,0 +1,7 @@
+2009-05-01  Peter Wang  <peterwang@vip.qq.com>
+
+	* README: Create READ file.
+	* ChangeLog: Create Changelog file.
+	* emacs: Create emacs dir.
+	* emacs/pw-*.el: Create pw-*.el file.
+
