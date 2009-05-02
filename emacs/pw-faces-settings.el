@@ -8,7 +8,8 @@
   ;; blue3
   (set-face-background 'region "#0000cd")
   ;; dark cyan
-  (set-face-foreground 'comint-highlight-prompt "#008b8b")
+  (eval-after-load "comint"
+    (set-face-foreground 'comint-highlight-prompt "#008b8b"))
   t)
 
 (message "faces settings loaded.")
