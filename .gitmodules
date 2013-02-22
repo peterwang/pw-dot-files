@@ -1,0 +1,3 @@
+[submodule ".emacs.d/vendor/php-mode"]
+	path = .emacs.d/vendor/php-mode
+	url = git://github.com/ejmr/php-mode.git
