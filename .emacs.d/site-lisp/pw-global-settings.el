@@ -2,6 +2,20 @@
 
 (provide 'pw-global-settings)
 
+(set-language-environment "UTF-8")
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq bookmark-default-file "~/.emacs.d/peter-bookmarks.el"
+      inhibit-startup-screen t
+      initial-scratch-message nil
+      split-width-threshold 65535
+      make-backup-files nil
+      visible-bell nil
+      ring-bell-function (lambda () 42)
+      dired-use-ls-dired nil)
+(ido-mode 'both)
+
+
+
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (setq make-backup-files nil)
