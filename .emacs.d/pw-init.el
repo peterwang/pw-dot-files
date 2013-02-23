@@ -54,6 +54,17 @@
 (dolist (p '(han symbol cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) p '("Hei" . "unicode-bmp")))
 
+;; save command history
+(savehist-mode 1)
+
+;; recent files
+(require 'recentf)
+(recentf-mode 1)
+
+;; dired-x
+(add-hook 'dired-load-hook (lambda ()
+			     (load "dired-x")))
+
 ;; desktop and session
 (require 'desktop)
 (desktop-save-mode 1)
