@@ -19,6 +19,7 @@
 		      smex
 		      magit
 		      js2-mode
+		      geben
 		      haskell-mode
 		      paredit
 		      yasnippet
@@ -53,6 +54,9 @@
 ;; lisp
 (load (expand-file-name "pw-lisp" dot-emacs-dir))
 
+;; webdev
+(load (expand-file-name "pw-webdev" dot-emacs-dir))
+
 ;; haskell
 
 ;; smex
@@ -70,7 +74,9 @@
 (set-language-environment "UTF-8")
 (fset 'yes-or-no-p 'y-or-n-p)
 
+
 (progn
+  (setq frame-title-format "%b - %f")
   (setq make-backup-files nil)
   (setq dired-use-ls-dired nil)
   (setq inhibit-startup-screen t)

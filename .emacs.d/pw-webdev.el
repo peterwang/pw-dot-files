@@ -12,4 +12,4 @@
 (add-to-list 'load-path
 	     (expand-file-name "vendor/php-mode" dot-emacs-dir))
 (require 'php-mode)
-
+(autoload 'geben "geben" "PHP Debugger on Emacs" t)
