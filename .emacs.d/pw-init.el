@@ -17,6 +17,7 @@
 		      zenburn-theme
 		      solarized-theme
 		      smex
+		      session
 		      magit
 		      js2-mode
 		      geben
@@ -52,6 +53,13 @@
 (set-frame-font "Monaco:pixelsize=14")
 (dolist (p '(han symbol cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) p '("Hei" . "unicode-bmp")))
+
+;; desktop and session
+(require 'desktop)
+(desktop-save-mode 1)
+(require 'session)
+(add-hook 'after-init-hook 'session-initialize)
+(setq desktop-globals-to-save '(desktop-missing-file-warning))
 
 ;; lisp
 (load (expand-file-name "pw-lisp" dot-emacs-dir))
