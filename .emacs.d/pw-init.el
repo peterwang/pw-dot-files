@@ -21,6 +21,8 @@
 		      js2-mode
 		      geben
 		      haskell-mode
+		      ghc
+		      ghci-completion
 		      paredit
 		      yasnippet
 		      auto-complete
@@ -58,6 +60,16 @@
 (load (expand-file-name "pw-webdev" dot-emacs-dir))
 
 ;; haskell
+(add-to-list 'exec-path "~/apps/ghc/bin")
+(add-to-list 'exec-path "~/.cabal/bin")
+
+(add-to-list 'load-path "~/.cabal/share/ghc-mod-1.11.3")
+
+(autoload 'ghc-init "ghc" nil t)
+(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+
+(require 'ghci-completion)
+(add-hook 'inferior-haskell-mode-hook 'turn-on-ghci-completion)
 
 ;; smex
 (smex-initialize)
