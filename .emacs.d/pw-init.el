@@ -18,6 +18,7 @@
 		      solarized-theme
 		      smex
 		      session
+		      anything
 		      magit
 		      js2-mode
 		      geben
@@ -81,6 +82,9 @@
 ;; haskell
 (add-to-list 'exec-path "~/apps/ghc/bin")
 (add-to-list 'exec-path "~/.cabal/bin")
+
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
 (add-to-list 'load-path "~/.cabal/share/ghc-mod-1.11.3")
 
