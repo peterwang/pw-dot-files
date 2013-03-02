@@ -1,0 +1,59 @@
+;;; -*- mode:common-lisp; -*-
+;;; The following lines added by ql:add-to-init-file:
+#-quicklisp
+(let ((quicklisp-init
+	(merge-pathnames "quicklisp/setup.lisp"
+			 (user-homedir-pathname))))
+  (when (probe-file quicklisp-init)
+    (load quicklisp-init)))
+
+;; sh make.sh --prefix=$HOME/apps/sbcl --xc-host="$HOME/apps/sbcl/bin/sbcl --disable-debugger --no-sysinit --no-userinit"
+
+;; (lambda (features)
+;;   (flet ((enable (x)
+;;                  (pushnew x features))
+;;          (disable (x)
+;;                   (setf features (remove x features))))
+;;     (enable :SB-THREAD)
+;;     (enable :SB-UNICODE)
+;;     (enable :SB-CORE-COMPRESSION)
+;;     (enable :SB-XREF-FOR-INTERNALS)
+;;     (enable :SB-AFTER-XC-CORE)))
+
+;;; linedit
+;;; Check for --no-linedit command-line option.
+;; (if (member "--no-linedit" sb-ext:*posix-argv* :test 'equal)
+;;     (setf sb-ext:*posix-argv*
+;; 	  (remove "--no-linedit" sb-ext:*posix-argv* :test 'equal))
+;;     (when (interactive-stream-p *terminal-io*)
+;;       (require :sb-aclrepl)
+;;       (require :linedit)
+;;       (funcall (intern "INSTALL-REPL" :linedit) :wrap-current t)))
+
+;;; proxy
+;;(setf (ql-config:config-value "proxy-url") "http://hostname:10080/")
+;;(setf (ql-config:config-value "proxy-url") nil)
+
+(dolist (p '("swank"
+	     "quickproject"
+	     "hunchentoot"
+	     "drakma"
+	     "cl-who"
+	     "parenscript"
+	     "clsql"))
+  (ql:quickload p))
+
+;;; quickproject
+(setf quickproject:*author* "Peter Wang <ptr.wang@gmail.com>"
+      quickproject:*license* "Copyright (c) 2012, Peter Wang. All rights reserved.")
+
+;;; clsql
+(clsql:push-library-path #P"/opt/local/lib/mysql5/mysql/")
+(ql:quickload "clsql-mysql")
+
+;;(defparameter *db* (clsql:connect '("localhost" "pw" "root" "") :database-type :mysql))
+;;(clsql:query "select version()")
+
+(swank:create-server :port 4005 :dont-close t)
+
+;;; END
