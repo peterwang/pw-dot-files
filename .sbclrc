@@ -7,8 +7,11 @@
   (when (probe-file quicklisp-init)
     (load quicklisp-init)))
 
-;; sh make.sh --prefix=$HOME/apps/sbcl --xc-host="$HOME/apps/sbcl/bin/sbcl --disable-debugger --no-sysinit --no-userinit"
+;; build sbcl on macosx
+;; mkdir ~/repos/git/sbcl && cd ~/repos/git/sbcl
+;; git clone git://sbcl.git.sourceforge.net/gitroot/sbcl/sbcl.git
 
+;; cat > ~/repos/git/sbcl/customize-target-features.lisp
 ;; (lambda (features)
 ;;   (flet ((enable (x)
 ;;                  (pushnew x features))
@@ -19,6 +22,8 @@
 ;;     (enable :SB-CORE-COMPRESSION)
 ;;     (enable :SB-XREF-FOR-INTERNALS)
 ;;     (enable :SB-AFTER-XC-CORE)))
+
+;; sh make.sh --prefix=$HOME/apps/sbcl --xc-host="$HOME/apps/sbcl/bin/sbcl --disable-debugger --no-sysinit --no-userinit"
 
 ;;; linedit
 ;;; Check for --no-linedit command-line option.
