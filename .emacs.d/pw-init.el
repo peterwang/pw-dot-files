@@ -79,6 +79,9 @@
 ;; webdev
 (load (expand-file-name "pw-webdev" dot-emacs-dir))
 
+;; dictionary
+(load (expand-file-name "pw-dictionary" dot-emacs-dir))
+
 ;; haskell
 (add-to-list 'exec-path "~/apps/ghc/bin")
 (add-to-list 'exec-path "~/.cabal/bin")

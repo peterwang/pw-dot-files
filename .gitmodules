@@ -1,3 +1,6 @@
 [submodule ".emacs.d/vendor/php-mode"]
 	path = .emacs.d/vendor/php-mode
 	url = git://github.com/ejmr/php-mode.git
+[submodule ".emacs.d/vendor/dictionary-el"]
+	path = .emacs.d/vendor/dictionary-el
+	url = git://github.com/peterwang/dictionary-el.git
