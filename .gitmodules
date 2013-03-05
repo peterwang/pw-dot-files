@@ -4,3 +4,6 @@
 [submodule ".emacs.d/vendor/dictionary-el"]
 	path = .emacs.d/vendor/dictionary-el
 	url = git://github.com/peterwang/dictionary-el.git
+[submodule ".emacs.d/vendor/doxymacs"]
+	path = .emacs.d/vendor/doxymacs
+	url = git@github.com:peterwang/doxymacs.git

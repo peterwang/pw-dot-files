@@ -53,8 +53,8 @@
       quickproject:*license* "Copyright (c) 2012, Peter Wang. All rights reserved.")
 
 ;;; clsql
-(clsql:push-library-path #P"/opt/local/lib/mysql5/mysql/")
-(ql:quickload "clsql-mysql")
+;(clsql:push-library-path #P"/opt/local/lib/mysql5/mysql/")
+;(ql:quickload "clsql-mysql")
 
 ;;(defparameter *db* (clsql:connect '("localhost" "pw" "root" "") :database-type :mysql))
 ;;(clsql:query "select version()")

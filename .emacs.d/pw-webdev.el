@@ -12,4 +12,10 @@
 (add-to-list 'load-path
 	     (expand-file-name "vendor/php-mode" dot-emacs-dir))
 (require 'php-mode)
+
+;; key map
+
+(define-key php-mode-map (kbd "RET") 'newline-and-indent)
+
+;; remote php debugging
 (autoload 'geben "geben" "PHP Debugger on Emacs" t)

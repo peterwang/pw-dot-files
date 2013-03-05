@@ -24,6 +24,7 @@
 		      geben
 		      haskell-mode
 		      ghc
+		      dsvn
 		      ghci-completion
 		      paredit
 		      yasnippet
@@ -78,6 +79,9 @@
 
 ;; webdev
 (load (expand-file-name "pw-webdev" dot-emacs-dir))
+
+;; doxymacs
+(load (expand-file-name "pw-doxymacs" dot-emacs-dir))
 
 ;; dictionary
 (load (expand-file-name "pw-dictionary" dot-emacs-dir))
