@@ -19,6 +19,7 @@
 		      smex
 		      session
 		      anything
+		      maxframe
 		      magit
 		      js2-mode
 		      geben
