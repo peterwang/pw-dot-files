@@ -1,6 +1,8 @@
 ;;; -*- coding: utf-8-unix; -*-
 ;;; init.el
 
+(setq debug-on-error nil)
+
 (add-hook 'after-init-hook
 	  `(lambda ()
 	     (setq dot-emacs-dir

@@ -1,7 +1,5 @@
 ;;; -*- coding: utf-8-unix; -*-
 
-(setq debug-on-error nil)
-
 ;; package
 (require 'package)
 ;(add-to-list 'package-archives
