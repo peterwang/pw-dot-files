@@ -105,7 +105,7 @@
       '("501caa208affa1145ccbb4b74b6cd66c3091e41c5bb66c677feda9def5eab19c"
 	"fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6"
 	default))
-(load-theme 'solarized-dark)
+(load-theme 'solarized-dark t)
 
 ;; customize UI
 (display-time-mode 1)
