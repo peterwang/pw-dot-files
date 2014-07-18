@@ -1,0 +1,4 @@
+;;; -*- mode: scheme; coding: utf-8;  -*-
+
+(require xrepl)
+

@@ -7,3 +7,10 @@
 (setq browse-url-browser-function 'w3m-browse-url
       w3m-fill-column 70
       w3m-use-cookies t)
+
+;; fix faces
+(eval-after-load
+ "w3m-form"
+ '(progn
+   (set-face-foreground 'w3m-form "cyan")
+   (set-face-foreground 'w3m-anchor "darkcyan")))

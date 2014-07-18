@@ -1,4 +1,12 @@
 
+;; ;; setup load-path and autoloads
+;; (add-to-list 'load-path "~/repos/git/slime")
+;; (require 'slime-autoloads)
+
+;; ;; Set your lisp system and, optionally, some contribs
+
+;; (setq slime-contribs '(slime-fancy))
+
 (load (expand-file-name "~/quicklisp/slime-helper.el"))
 (setq inferior-lisp-program "~/apps/sbcl/bin/sbcl")
 
