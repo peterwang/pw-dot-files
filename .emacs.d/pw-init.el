@@ -2,8 +2,8 @@
 
 ;; package
 (require 'package)
-;(add-to-list 'package-archives
-;             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -14,9 +14,10 @@
   (package-refresh-contents))
 
 (defvar my-packages '(clojure-mode
-                      clojurescript-mode
-                      expand-region
+                      ;clojurescript-mode
 		      ;clojure-test-mode
+                      cider
+                      expand-region
                       emms
                       ack-and-a-half
                       sudo-ext
@@ -153,11 +154,12 @@
 ;(add-hook 'lisp-mode-hook 'pretty-lambda-mode)
 
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
-(add-hook 'clojure-mode-hook 'nrepl-turn-on-eldoc-mode)
+;(add-hook 'clojure-mode-hook 'nrepl-turn-on-eldoc-mode)
 ;(add-hook 'clojure-mode-hook 'pretty-lambda-mode)
 
-(add-hook 'nrepl-repl-mode-hook 'enable-paredit-mode)
+;(add-hook 'nrepl-repl-mode-hook 'enable-paredit-mode)
 ;(add-hook 'nrepl-mode-hook 'pretty-lambda-mode)
+(add-hook 'cider-repl-mode-hook 'enable-paredit-mode)
 
 (add-hook 'slime-repl-mode-hook 'enable-paredit-mode)
 (defun override-slime-repl-bindings-with-paredit ()
@@ -327,7 +329,7 @@
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
   (add-hook hook 'turn-on-elisp-slime-nav-mode))
 
-(global-undo-tree-mode 1)
+;(global-undo-tree-mode 1)
 
 ;;; emms
 (emms-standard)
