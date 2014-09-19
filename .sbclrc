@@ -38,6 +38,8 @@
 ;;; proxy
 ;;(setf (ql-config:config-value "proxy-url") "http://hostname:10080/")
 ;;(setf (ql-config:config-value "proxy-url") nil)
+;; (require 'asdf)
+;; (push #P"/Users/peter/repos/git/slime/" asdf:*central-registry*)
 
 (dolist (p '("swank"
 	     "quickproject"

@@ -7,3 +7,6 @@
 [submodule ".emacs.d/vendor/doxymacs"]
 	path = .emacs.d/vendor/doxymacs
 	url = git@github.com:peterwang/doxymacs.git
+[submodule ".emacs.d/vendor/folding.el"]
+	path = .emacs.d/vendor/folding.el
+	url = git://github.com/peterwang/folding.el.git

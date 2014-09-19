@@ -1,0 +1,13 @@
+(source gnu)
+(source marmalade)
+(source melpa)
+(source org)
+
+(depends-on "cask")
+(depends-on "cider")
+(depends-on "color-theme-solarized")
+(depends-on "flx-ido")
+(depends-on "magit")
+(depends-on "pallet")
+(depends-on "projectile")
+(depends-on "yasnippet")
