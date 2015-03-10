@@ -16,15 +16,17 @@
 (defvar my-packages '(clojure-mode
                       ;clojurescript-mode
 		      ;clojure-test-mode
+                      ac-slime
                       cider
                       expand-region
-                      emms
+                      geiser
+                      ;emms
                       ack-and-a-half
-                      sudo-ext
+                      ;sudo-ext
                       flx-ido
                       grizzl
                       emmet-mode
-                      hamlet-mode
+                      ;hamlet-mode
                       diff-hl
                       ;xclip
                       elpy
@@ -70,7 +72,7 @@
                       pretty-lambdada
                       unicode-fonts
 		      json-mode
-		      color-theme-solarized
+		      ;color-theme-solarized
 		      smex
 		      session
 		      anything
@@ -107,6 +109,7 @@
 	"fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6"
 	default))
 (load-theme 'solarized-dark t)
+;; (load-theme 'solarized-light t)
 
 ;; customize UI
 (display-time-mode 1)
@@ -120,7 +123,7 @@
 ;(set-face-background 'secondary-selection "gray")
 
 ;; font
-(set-frame-font "Monaco:pixelsize=14")
+(set-frame-font "Monaco:pixelsize=16")
 (dolist (p '(han cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font) p '("Hei" . "unicode-bmp")))
 
@@ -204,8 +207,8 @@
 (load (expand-file-name "pw-w3m" dot-emacs-dir))
 
 ;; haskell
-(add-to-list 'exec-path "~/apps/ghc/bin")
-(add-to-list 'exec-path "~/.cabal/bin")
+;(add-to-list 'exec-path "~/apps/ghc/bin")
+;(add-to-list 'exec-path "~/.cabal/bin")
 
 (defun haskell-style ()
   "Sets the current buffer to use Haskell Style. Meant to be
@@ -282,14 +285,14 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; geiser
-(load-file "~/repos/git/geiser/elisp/geiser.el")
+;(load-file "~/repos/git/geiser/elisp/geiser.el")
 (require 'geiser)
 
 (progn
   (setq frame-title-format "%b - %f")
   (setq shell-file-name (executable-find "bash"))
   (setq sql-postgres-program (executable-find "psql92"))
-  (setq geiser-racket-binary "/Applications/Racket v6.0.1/bin/mzscheme")
+  (setq geiser-racket-binary "/Applications/Racket v6.1/bin/mzscheme")
   ;;(setq geiser-racket-binary "/Users/peter/tmp/ikarus-0.0.3/ikarus")
   ;;(setq geiser-racket-binary "/Users/peter/repos/git/racket/racket/bin/racket")
   (setq display-time-day-and-date t)
@@ -306,7 +309,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; erlang
-(add-to-list 'load-path "/opt/local/lib/erlang/lib/tools-2.6.15/emacs")
+(add-to-list 'load-path "/opt/local/lib/erlang/lib/tools-2.7/emacs")
 (setq erlang-root-dir "/opt/local/lib/erlang")
 (add-to-list 'exec-path "/opt/local/lib/erlang/bin")
 (require 'erlang-start)
@@ -317,9 +320,9 @@
 
 (progn
   (setenv "JVM_OPTS" "-Xmx2048m -server")
-  (menu-bar-mode -1)
+  (menu-bar-mode 1)
   (set-frame-position nil 0 0)
-  (set-frame-size nil 158 34))
+  (set-frame-size nil 140 35))
 
 (global-set-key (kbd "C-c h") 'helm-mini)
 
@@ -329,14 +332,16 @@
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
   (add-hook hook 'turn-on-elisp-slime-nav-mode))
 
+(setq php-boris-command "~/repos/git/boris/bin/boris")
+
 ;(global-undo-tree-mode 1)
 
 ;;; emms
-(emms-standard)
-(emms-default-players)
-(setq emms-repeat-playlist t)
-(setq emms-player-list '(emms-player-mplayer))
-(setq emms-source-file-default-directory "~/Box Documents/Music/")
+;; (emms-standard)
+;; (emms-default-players)
+;; (setq emms-repeat-playlist t)
+;; (setq emms-player-list '(emms-player-mplayer))
+;; (setq emms-source-file-default-directory "~/Box Documents/Music/")
 
 
 (defun pw-update-repos ()
@@ -382,5 +387,16 @@
 ;; not ok 2 - request parameter action is pagex
 ;; #     Failed test (./lib/vendor/symfony-1.4.20/lib/test/sfTesterRequest.class.php at line 48)
 
+;; INFO path
+(eval-after-load 'info
+                 '(progn
+                   (push "/opt/local/share/info/" Info-default-directory-list)
+                   ;; (push "~/.emacs.d/info/" Info-default-directory-list)
+                   ))
 
 (global-set-key (kbd "s-r") 'run-php-test)
+
+(eval-after-load 'w3m-search
+                 '(progn
+                   (push '("youdao" "http://www.youdao.com/search?q=%s") w3m-search-engine-alist)
+                   (setq w3m-search-default-engine "yahoo")))

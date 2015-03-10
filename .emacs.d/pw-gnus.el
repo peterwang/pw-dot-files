@@ -1,4 +1,5 @@
 (setq gnus-select-method '(nntp "news.gmane.org"))
+;;;(setq gnus-select-method '(nntp "news.newsfan.net"))
 
 ;(setq smtpmail-smtp-server "smtp@host.com")
 ;(setq user-mail-address "stefan@host.com")
